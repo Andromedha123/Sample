@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Little Love Story ❤️</title>
+
+<style>
+
+#musicButton {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: #c43755;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+    transition: .3s;
+}
+
+#musicButton:hover {
+    transform: scale(1.1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:#fff5f7;
+
+    color:#5d2633;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================
+   PAGE SYSTEM
+===================================== */
+
+.page{
+
+    min-height:100vh;
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:30px 20px;
+
+    position:relative;
+
+}
+
+.page.active{
+
+    display:flex;
+
+    animation:
+        pageIn .8s ease;
+
+}
+
+@keyframes pageIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(30px)
+            scale(.97);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.container{
+
+    width:100%;
+
+    max-width:900px;
+
+    text-align:center;
+
+}
+
+
+/* =====================================
+   BACKGROUND
+===================================== */
+
+.bg{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:0;
+
+}
+
+.floating-heart{
+
+    position:absolute;
+
+    bottom:-50px;
+
+    animation:
+        floatHeart linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:.8;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =====================================
+   TEXT
+===================================== */
+
+h1,h2,h3{
+
+    font-family:
+        Georgia,
+        serif;
+
+}
+
+h1{
+
+    font-size:
+        clamp(45px,8vw,85px);
+
+    color:#b93655;
+
+}
+
+h2{
+
+    font-size:
+        clamp(35px,6vw,55px);
+
+    color:#b93655;
+
+    margin-bottom:20px;
+
+}
+
+.subtitle{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =====================================
+   BUTTON
+===================================== */
+
+.btn{
+
+    border:none;
+
+    padding:
+        15px 30px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d84d69,
+            #b93250
+        );
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    margin-top:30px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(185,50,80,.25);
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+}
+
+
+/* =====================================
+   PAGE 1
+===================================== */
+
+#page1{
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            #ffd5df,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            #ffc4d1,
+            transparent 35%
+        ),
+
+        #fff2f5;
+
+}
+
+
+.intro{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.intro-heart{
+
+    font-size:90px;
+
+    animation:
+        heartbeat 1.3s infinite;
+
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+}
+
+
+/* =====================================
+   PAGE 2
+   LOCK
+===================================== */
+
+#page2{
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe5eb,
+            #fff6f8
+        );
+
+}
+
+.lock{
+
+    width:170px;
+
+    height:190px;
+
+    margin:
+        30px auto;
+
+    position:relative;
+
+}
+
+.lock-body{
+
+    width:150px;
+
+    height:120px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d94f6c,
+            #a92f4a
+        );
+
+    border-radius:20px;
+
+    position:absolute;
+
+    bottom:0;
+
+    left:10px;
+
+    box-shadow:
+        0 20px 40px
+        rgba(0,0,0,.15);
+
+}
+
+.lock-shackle{
+
+    width:85px;
+
+    height:90px;
+
+    border:
+        15px solid #c73c58;
+
+    border-bottom:none;
+
+    border-radius:
+        50px 50px 0 0;
+
+    position:absolute;
+
+    top:0;
+
+    left:42px;
+
+}
+
+.lock-heart{
+
+    position:absolute;
+
+    top:43%;
+
+    left:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    font-size:40px;
+
+}
+
+.pin{
+
+    width:250px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    outline:none;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.08);
+
+}
+
+
+/* =====================================
+   PAGE 3
+===================================== */
+
+#page3{
+
+    background:#fff;
+
+}
+
+.message-card{
+
+    max-width:650px;
+
+    margin:auto;
+
+    background:#fff9fa;
+
+    padding:45px 35px;
+
+    border-radius:25px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.1);
+
+}
+
+.typing{
+
+    font-family:Georgia,serif;
+
+    font-size:23px;
+
+    line-height:1.9;
+
+    min-height:130px;
+
+}
+
+
+/* =====================================
+   PAGE 4
+   MEMORY
+===================================== */
+
+#page4{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f4,
+            #ffe0e8
+        );
+
+}
+
+.memory-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:40px;
+
+}
+
+.memory{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.12);
+
+    transform:
+        rotate(
+            var(--rotation)
+        );
+
+    transition:.4s;
+
+}
+
+.memory:hover{
+
+    transform:
+        rotate(0)
+        translateY(-10px)
+        scale(1.04);
+
+}
+
+.photo{
+    width:100%;
+    height:240px;
+
+    background:#ffe7ec;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:8px;
+
+    margin-bottom:15px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:transform .5s ease;
+}
+
+.memory:hover .photo img{
+    transform:scale(1.08);
+}
+
+.memory p{
+
+    font-family:Georgia,serif;
+
+    font-size:16px;
+
+}
+
+
+/* =====================================
+   PAGE 5
+   LOVE METER
+===================================== */
+
+#page5{
+
+    background:white;
+
+}
+
+.meter{
+
+    width:100%;
+
+    max-width:600px;
+
+    height:30px;
+
+    margin:40px auto;
+
+    background:#eee;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+.meter-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff7b96,
+            #c72f51
+        );
+
+    transition:
+        width 2s ease;
+
+}
+
+.percent{
+
+    font-size:50px;
+
+    color:#c43755;
+
+    font-weight:bold;
+
+}
+
+
+/* =====================================
+   PAGE 6
+   MINI GAME
+===================================== */
+
+#page6{
+
+    background:
+        radial-gradient(
+            circle,
+            #ffe2e9,
+            #fff6f8
+        );
+
+}
+
+.game{
+
+    width:100%;
+
+    max-width:700px;
+
+    height:450px;
+
+    margin:30px auto;
+
+    background:white;
+
+    border-radius:25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,.12);
+
+}
+
+.game-heart{
+
+    position:absolute;
+
+    font-size:40px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    display:none;
+
+    transition:.1s;
+
+}
+
+.score{
+
+    font-size:24px;
+
+    color:#c43755;
+
+}
+
+
+/* =====================================
+   PAGE 7
+===================================== */
+
+#page7{
+
+    background:#fff;
+
+}
+
+.choice-container{
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+.choice{
+
+    display:block;
+
+    width:100%;
+
+    padding:18px;
+
+    margin:15px 0;
+
+    border:2px solid #f1b2bf;
+
+    border-radius:15px;
+
+    background:white;
+
+    color:#8d3046;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.choice:hover{
+
+    background:#fff0f3;
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =====================================
+   PAGE 8
+   FINAL
+===================================== */
+
+#page8{
+
+    background:
+        linear-gradient(
+            135deg,
+            #c83e5b,
+            #7f2339
+        );
+
+    color:white;
+
+}
+
+#page8 h2{
+
+    color:white;
+
+}
+
+.final-text{
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    max-width:650px;
+
+    margin:auto;
+
+}
+
+.yes-btn{
+
+    background:white;
+
+    color:#c43755;
+
+}
+
+.no-btn{
+
+    position:relative;
+
+    background:
+        rgba(255,255,255,.2);
+
+}
+
+
+/* =====================================
+   MODAL
+===================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(0,0,0,.65);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:1000;
+
+    padding:20px;
+
+}
+
+.modal.show{
+
+    display:flex;
+
+}
+
+.modal-box{
+
+    background:white;
+
+    padding:45px 30px;
+
+    border-radius:25px;
+
+    max-width:500px;
+
+    width:100%;
+
+    text-align:center;
+
+    animation:
+        modalIn .5s ease;
+
+}
+
+@keyframes modalIn{
+
+    from{
+
+        transform:
+            scale(.5);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:
+            scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+.modal-box h2{
+
+    font-size:40px;
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:700px){
+
+    .memory-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .game{
+
+        height:400px;
+
+    }
+
+    .typing{
+
+        font-size:19px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicButton" onclick="toggleMusic()">
+    🎵
+</button>
+
+<!-- BACKGROUND -->
+
+<div class="bg" id="bg"></div>
+
+<!-- =========================================
+     PAGE 1
+========================================= -->
+
+<section
+    class="page active"
+    id="page1">
+
+```
+<div class="container intro">
+
+    <div class="intro-heart">
+        ❤️
+    </div>
+
+    <div
+        style="
+        letter-spacing:4px;
+        margin:20px 0;
+        color:#b93655;
+        "
+    >
+        A LITTLE SURPRISE
+    </div>
+
+    <h1>
+        For You
+    </h1>
+
+    <p class="subtitle">
+
+        Aku membuat sesuatu yang sederhana
+        tapi berasal dari hati.
+
+        <br><br>
+
+        Mau masuk ke dalam
+        cerita kecil kita? 🥺❤️
+
+    </p>
+
+    <button
+        class="btn"
+        onclick="startLoveStory()"
+>
+        Aku Mau ❤️
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     PAGE 2
+========================================= -->
+
+<section
+    class="page"
+    id="page2">
+
+```
+<div class="container">
+
+    <h2>
+        Ada Rahasia 🔐
+    </h2>
+
+    <p class="subtitle">
+
+        Ada sebuah kunci yang harus
+        kamu buka terlebih dahulu.
+
+        <br>
+
+        Masukkan tanggal yang
+        paling berarti untuk kita.
+
+    </p>
+
+
+    <div class="lock">
+
+        <div class="lock-shackle"></div>
+
+        <div class="lock-body">
+
+            <div class="lock-heart">
+                ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <input
+        class="pin"
+        id="pin"
+        type="text"
+        placeholder="Contoh: 14022026"
+    >
+
+    <br>
+
+    <button
+        class="btn"
+        onclick="unlock()"
+    >
+
+        Buka Kunci 🔓
+
+    </button>
+
+
+    <p
+        id="wrong"
+        style="
+        margin-top:20px;
+        color:#c43755;
+        "
+    ></p>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     PAGE 3
+========================================= -->
+
+<section
+    class="page"
+    id="page3">
+
+```
+<div class="container">
+
+    <h2>
+        Ada Sesuatu Untukmu 💌
+    </h2>
+
+    <div class="message-card">
+
+        <div
+            class="typing"
+            id="typing"
+        ></div>
+
+    </div>
+
+    <button
+        class="btn"
+        onclick="nextPage(4)"
+    >
+
+        Lanjut ❤️
+
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     PAGE 4
+========================================= -->
+
+<section
+    class="page"
+    id="page4">
+
+```
+<div class="container">
+
+    <h2>
+        Little Memories 📸
+    </h2>
+
+    <p class="subtitle">
+
+        Beberapa hal kecil yang membuat
+        perjalanan kita menjadi berarti.
+
+    </p>
+
+
+<div class="memory-grid">
+
+    <!-- FOTO 1 -->
+    <div
+        class="memory"
+        style="--rotation:-3deg"
+    >
+
+        <div class="photo">
+            <img
+                src="foto1.jpg"
+                alt="Kenangan pertama"
+            >
+        </div>
+
+        <p>
+            Pertama kali kita
+            mulai dekat. ❤️
+        </p>
+
+    </div>
+
+
+    <!-- FOTO 2 -->
+    <div
+        class="memory"
+        style="--rotation:2deg"
+    >
+
+        <div class="photo">
+            <img
+                src="foto2.jpg"
+                alt="Kenangan bersama"
+            >
+        </div>
+
+        <p>
+            Semua cerita kecil
+            yang kita bagi bersama. 💕
+        </p>
+
+    </div>
+
+
+    <!-- FOTO 3 -->
+    <div
+        class="memory"
+        style="--rotation:-2deg"
+    >
+
+        <div class="photo">
+            <img
+                src="foto3.jpg"
+                alt="Kenangan tersayang"
+            >
+        </div>
+
+        <p>
+            Kenangan yang
+            selalu ingin aku simpan. 🌹
+        </p>
+
+    </div>
+
+</div>
+
+
+    <button
+        class="btn"
+        onclick="nextPage(5)"
+    >
+
+        Ada Lagi ❤️
+
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     PAGE 5
+========================================= -->
+
+<section
+    class="page"
+    id="page5">
+
+```
+<div class="container">
+
+    <h2>
+        Seberapa Besar Rasa Sayangku?
+    </h2>
+
+    <p class="subtitle">
+
+        Sebenarnya aku sendiri
+        nggak tahu cara menghitungnya...
+
+    </p>
+
+
+    <div class="meter">
+
+        <div
+            class="meter-fill"
+            id="meter"
+        ></div>
+
+    </div>
+
+
+    <div
+        class="percent"
+        id="percent"
+    >
+        0%
+    </div>
+
+
+    <button
+        class="btn"
+        onclick="startMeter()"
+    >
+
+        Hitung ❤️
+
+    </button>
+
+
+    <br>
+
+
+    <button
+        class="btn"
+        id="meterNext"
+        style="display:none"
+        onclick="nextPage(6)"
+    >
+
+        Ternyata... 😳
+
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     PAGE 6
+========================================= -->
+
+<section
+    class="page"
+    id="page6">
+
+```
+<div class="container">
+
+    <h2>
+        Tangkap Hatiku! ❤️
+    </h2>
+
+    <p class="subtitle">
+
+        Ada 5 hati yang harus kamu tangkap.
+
+        <br>
+
+        Klik hati yang muncul!
+
+    </p>
+
+
+    <div class="score">
+
+        Score:
+        <span id="score">
+            0
+        </span>
+        / 5
+
+    </div>
+
+
+    <div class="game">
+
+        <div
+            class="game-heart"
+            id="gameHeart"
+            onclick="catchHeart()"
+        >
+            ❤️
+        </div>
+
+    </div>
+
+
+    <button
+        class="btn"
+        id="gameStart"
+        onclick="startGame()"
+    >
+
+        Mulai Game 🎮
+
+    </button>
+
+
+    <button
+        class="btn"
+        id="gameNext"
+        style="display:none"
+        onclick="nextPage(7)"
+    >
+
+        Berhasil! ❤️
+
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     PAGE 7
+========================================= -->
+
+<section
+    class="page"
+    id="page7">
+
+```
+<div class="container">
+
+    <h2>
+        Kalau Aku Tanya... 💭
+    </h2>
+
+    <p class="subtitle">
+
+        Apa yang paling kamu suka
+        dari hubungan kita?
+
+    </p>
+
+
+    <div class="choice-container">
+
+        <button
+            class="choice"
+            onclick="choose('senyum')"
+        >
+
+            😊 Senyum dan perhatianmu
+
+        </button>
+
+
+        <button
+            class="choice"
+            onclick="choose('cerita')"
+        >
+
+            💬 Cerita dan obrolan kita
+
+        </button>
+
+
+        <button
+            class="choice"
+            onclick="choose('waktu')"
+        >
+
+            🥰 Waktu yang kita habiskan bersama
+
+        </button>
+
+
+        <button
+            class="choice"
+            onclick="choose('semua')"
+        >
+
+            ❤️ Semuanya
+
+        </button>
+
+    </div>
+
+
+    <p
+        id="choiceResult"
+        style="
+        margin-top:30px;
+        font-size:20px;
+        color:#c43755;
+        "
+    ></p>
+
+
+    <button
+        class="btn"
+        id="choiceNext"
+        style="display:none"
+        onclick="nextPage(8)"
+    >
+
+        Satu Pertanyaan Terakhir...
+
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     PAGE 8
+========================================= -->
+
+<section
+    class="page"
+    id="page8">
+
+```
+<div class="container">
+
+    <div
+        style="
+        font-size:80px;
+        margin-bottom:20px;
+        "
+    >
+        ❤️
+    </div>
+
+    <h2>
+        Mau Tetap Bersamaku?
+    </h2>
+
+
+    <p class="final-text">
+
+        Aku nggak bisa menjanjikan
+        bahwa semuanya akan selalu sempurna.
+
+        <br><br>
+
+        Tapi aku bisa menjanjikan satu hal...
+
+        <br><br>
+
+        Selama kamu masih mau berjalan
+        bersamaku, aku akan selalu berusaha
+        menjadi seseorang yang layak
+        untuk kamu pilih.
+
+        <br><br>
+
+        Jadi...
+
+    </p>
+
+
+    <button
+        class="btn yes-btn"
+        onclick="yesAnswer()"
+    >
+
+        IYA, MAU ❤️
+
+    </button>
+
+
+    <button
+        class="btn no-btn"
+        id="noBtn"
+        onclick="moveNo()"
+    >
+
+        Nggak 😜
+
+    </button>
+
+</div>
+```
+
+</section>
+
+<!-- =========================================
+     MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="modal">
+
+```
+<div class="modal-box">
+
+    <div
+        style="
+        font-size:70px;
+        "
+    >
+        💕
+    </div>
+
+    <h2>
+        YEAAY! ❤️
+    </h2>
+
+    <p
+        style="
+        font-size:18px;
+        line-height:1.8;
+        "
+    >
+
+        Kalau begitu...
+
+        <br><br>
+
+        Mari kita buat lebih banyak
+        cerita, tawa, perjalanan,
+        dan kenangan bersama.
+
+        <br><br>
+
+        Aku sayang kamu. 🥺❤️
+
+    </p>
+
+
+    <button
+        class="btn"
+        onclick="closeModal()"
+    >
+
+        ❤️
+
+    </button>
+
+</div>
+```
+
+</div>
+
+<script>
+
+
+/* =====================================
+   FLOATING HEART
+===================================== */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "floating-heart";
+
+    const icons=[
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘"
+    ];
+
+    heart.innerHTML =
+        icons[
+            Math.floor(
+                Math.random()*icons.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random()*100+"%";
+
+    heart.style.fontSize =
+        (15+Math.random()*25)+"px";
+
+    heart.style.animationDuration =
+        (5+Math.random()*6)+"s";
+
+    document
+        .getElementById("bg")
+        .appendChild(heart);
+
+    setTimeout(
+        ()=>{
+            heart.remove();
+        },
+        12000
+    );
+
+}
+
+setInterval(
+    createHeart,
+    450
+);
+
+
+/* =====================================
+   PAGE NAVIGATION
+===================================== */
+
+function nextPage(number){
+
+    document
+        .querySelectorAll(".page")
+        .forEach(
+            page=>{
+                page.classList.remove("active");
+            }
+        );
+
+    document
+        .getElementById(
+            "page"+number
+        )
+        .classList.add("active");
+
+    window.scrollTo(0,0);
+
+
+    if(number===3){
+
+        startTyping();
+
+    }
+
+}
+
+
+/* =====================================
+   PIN
+===================================== */
+
+function unlock(){
+
+    const pin =
+        document
+        .getElementById("pin")
+        .value
+        .trim();
+
+    /*
+        GANTI PIN DI SINI
+
+        Contoh:
+        14022026
+    */
+
+    const correctPin =
+        "05052026";
+
+
+    if(pin===correctPin){
+
+        document
+            .getElementById("wrong")
+            .innerHTML =
+            "🔓 Kunci berhasil dibuka! ❤️";
+
+        setTimeout(
+            ()=>{
+                nextPage(3);
+            },
+            800
+        );
+
+    }else{
+
+        document
+            .getElementById("wrong")
+            .innerHTML =
+            "Hmm... sepertinya bukan itu 🥺";
+
+    }
+
+}
+
+
+/* =====================================
+   TYPING
+===================================== */
+
+const text = `Sayang...
+
+Aku mungkin nggak selalu pandai mengungkapkan apa yang aku rasakan.
+
+Tapi ada satu hal yang selalu aku tahu dengan pasti...
+
+Aku benar-benar sayang sama kamu. ❤️
+
+Kamu adalah seseorang yang berhasil membuat hari-hariku terasa lebih berarti.
+
+Aku suka cerita kita.
+
+Aku suka tawa kita.
+
+Aku suka semua hal kecil yang kita lakukan bersama.
+
+Dan kalau aku diberi kesempatan untuk memilih lagi...
+
+Aku tetap akan memilih kamu.
+
+Hari ini.
+
+Besok.
+
+Dan semoga untuk hari-hari yang masih panjang di depan kita.
+
+Terima kasih sudah hadir di hidupku.
+
+Aku sayang kamu. ❤️`;
+
+let typingStarted=false;
+
+function startTyping(){
+
+    if(typingStarted)
+        return;
+
+    typingStarted=true;
+
+    const element =
+        document.getElementById(
+            "typing"
+        );
+
+    let index=0;
+
+    function type(){
+
+        if(index<text.length){
+
+            element.innerHTML +=
+                text[index]
+                .replace(
+                    /\n/g,
+                    "<br>"
+                );
+
+            index++;
+
+            setTimeout(
+                type,
+                28
+            );
+
+        }
+
+    }
+
+    type();
+
+}
+
+
+/* =====================================
+   LOVE METER
+===================================== */
+
+function startMeter(){
+
+    const meter =
+        document.getElementById(
+            "meter"
+        );
+
+    const percent =
+        document.getElementById(
+            "percent"
+        );
+
+    let value=0;
+
+    const interval =
+        setInterval(
+            ()=>{
+
+                value++;
+
+                meter.style.width =
+                    value+"%";
+
+                percent.innerHTML =
+                    value+"%";
+
+                if(value>=100){
+
+                    clearInterval(interval);
+
+                    setTimeout(
+                        ()=>{
+                            percent.innerHTML =
+                                "∞% ❤️";
+
+                            document
+                                .getElementById(
+                                    "meterNext"
+                                )
+                                .style.display=
+                                "inline-block";
+
+                        },
+                        500
+                    );
+
+                }
+
+            },
+            20
+        );
+
+}
+
+
+/* =====================================
+   MINI GAME
+===================================== */
+
+let score=0;
+
+function startGame(){
+
+    score=0;
+
+    document
+        .getElementById("score")
+        .innerHTML=score;
+
+    document
+        .getElementById("gameStart")
+        .style.display="none";
+
+    spawnHeart();
+
+}
+
+
+function spawnHeart(){
+
+    const heart =
+        document
+        .getElementById(
+            "gameHeart"
+        );
+
+    const game =
+        document
+        .querySelector(".game");
+
+    const maxX =
+        game.clientWidth-60;
+
+    const maxY =
+        game.clientHeight-60;
+
+    heart.style.left =
+        Math.random()*maxX+"px";
+
+    heart.style.top =
+        Math.random()*maxY+"px";
+
+    heart.style.display =
+        "block";
+
+}
+
+
+function catchHeart(){
+
+    score++;
+
+    document
+        .getElementById("score")
+        .innerHTML=score;
+
+    if(score>=5){
+
+        document
+            .getElementById(
+                "gameHeart"
+            )
+            .style.display="none";
+
+        document
+            .getElementById(
+                "gameNext"
+            )
+            .style.display=
+            "inline-block";
+
+        heartExplosion();
+
+    }else{
+
+        spawnHeart();
+
+    }
+
+}
+
+
+/* =====================================
+   CHOICE
+===================================== */
+
+function choose(choice){
+
+    const result =
+        document
+        .getElementById(
+            "choiceResult"
+        );
+
+    result.style.opacity=0;
+
+    setTimeout(
+        ()=>{
+
+            if(choice==="senyum"){
+
+                result.innerHTML =
+                "Aku juga suka melihat senyum kamu. 🥺❤️";
+
+            }
+
+            if(choice==="cerita"){
+
+                result.innerHTML =
+                "Aku bisa ngobrol sama kamu berjam-jam dan tetap nggak bosan. 💕";
+
+            }
+
+            if(choice==="waktu"){
+
+                result.innerHTML =
+                "Karena sebenarnya yang paling penting bukan tempatnya, tapi kamu yang ada di sana. ❤️";
+
+            }
+
+            if(choice==="semua"){
+
+                result.innerHTML =
+                "Jawaban yang paling benar! 😌❤️";
+
+            }
+
+            result.style.opacity=1;
+
+            document
+                .getElementById(
+                    "choiceNext"
+                )
+                .style.display=
+                "inline-block";
+
+        },
+        200
+    );
+
+}
+
+
+/* =====================================
+   NO BUTTON
+===================================== */
+
+function moveNo(){
+
+    const button =
+        document
+        .getElementById(
+            "noBtn"
+        );
+
+    const x =
+        Math.random()*250-125;
+
+    const y =
+        Math.random()*150-75;
+
+    button.style.transform =
+        `translate(${x}px,${y}px)`;
+
+}
+
+
+/* =====================================
+   YES
+===================================== */
+
+function yesAnswer(){
+
+    document
+        .getElementById(
+            "modal"
+        )
+        .classList.add("show");
+
+    heartExplosion();
+
+}
+
+
+/* =====================================
+   CLOSE MODAL
+===================================== */
+
+function closeModal(){
+
+    document
+        .getElementById(
+            "modal"
+        )
+        .classList.remove("show");
+
+}
+
+
+/* =====================================
+   HEART EXPLOSION
+===================================== */
+
+function heartExplosion(){
+
+    for(let i=0;i<80;i++){
+
+        const heart =
+            document
+            .createElement("div");
+
+        heart.innerHTML =
+            ["❤️","💕","💖","💗"]
+            [
+                Math.floor(
+                    Math.random()*4
+                )
+            ];
+
+        heart.style.position=
+            "fixed";
+
+        heart.style.left=
+            "50%";
+
+        heart.style.top=
+            "50%";
+
+        heart.style.zIndex=
+            "2000";
+
+        heart.style.fontSize=
+            (15+Math.random()*30)
+            +"px";
+
+        const x=
+            (Math.random()-.5)*1000;
+
+        const y=
+            (Math.random()-.5)*700;
+
+        heart.animate(
+
+            [
+
+                {
+                    transform:
+                    "translate(-50%,-50%) scale(0)",
+
+                    opacity:1
+
+                },
+
+                {
+
+                    transform:
+                    `translate(
+                        calc(-50% + ${x}px),
+                        calc(-50% + ${y}px)
+                    )
+                    rotate(
+                        ${Math.random()*720}deg
+                    )
+                    scale(1.5)`,
+
+                    opacity:0
+
+                }
+
+            ],
+
+            {
+
+                duration:
+                    1500+
+                    Math.random()*1200,
+
+                easing:
+                    "cubic-bezier(.2,.8,.2,1)"
+
+            }
+
+        );
+
+        document
+            .body
+            .appendChild(heart);
+
+        setTimeout(
+            ()=>{
+                heart.remove();
+            },
+            3000
+        );
+
+    }
+
+}
+
+/* =====================================
+   BACKGROUND MUSIC
+===================================== */
+
+const bgMusic = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+function playMusic() {
+    bgMusic.play()
+        .then(() => {
+            musicButton.innerHTML = "🔊";
+        })
+        .catch(() => {
+            console.log("Browser menunggu interaksi pengguna.");
+        });
+}
+
+function toggleMusic() {
+
+    if (bgMusic.paused) {
+
+        bgMusic.play();
+        musicButton.innerHTML = "🔊";
+
+    } else {
+
+        bgMusic.pause();
+        musicButton.innerHTML = "🎵";
+
+    }
+
+}
+
+function startLoveStory() {
+
+    playMusic();
+
+    nextPage(2);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
